@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h2>Dashboard</h2>
+
+<table style="width:100%; border: 1px solid black">
+  <tr>
+    <th>Day</th>
+    <th>start</th>
+    <th>end</th>
+    <th>duration</th>
+    <th>earnings</th>
+    <th>date</th>
+    <th>per hour</th>
+  </tr>
+
+  {% for record in rows %}
+      <tr>
+          {% for item in record.values() %}
+              <td>{{item}}</td>
+          {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+      
+{% endblock %}
